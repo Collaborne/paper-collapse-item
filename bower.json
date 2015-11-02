@@ -27,7 +27,7 @@
     "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.0",
     "paper-item": "PolymerElements/paper-item#^1.0.0",
     "paper-styles": "PolymerElements/paper-styles#^1.0.0"
-  }
+  },
   "devDependencies": {
     "test-fixture": "PolymerElements/test-fixture#^1.0.0",
     "web-component-tester": "*",
