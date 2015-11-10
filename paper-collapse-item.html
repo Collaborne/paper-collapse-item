@@ -33,7 +33,6 @@
 			.content {
 				opacity: var(--dark-primary-opacity);
 				@apply(--paper-font-body1);
-				margin-left: 16px;
 			}
 		</style>
 
@@ -44,11 +43,11 @@
 					<div class="flex">[[header]]</div>
 					<paper-icon-button class='toogle' icon=[[_toggleIcon]]></paper-icon-button>
 				</div>
+				<iron-collapse class="content" opened={{opened}}>
+					<content></content>
+				</iron-collapse>
 			</paper-item-body>
 		</paper-item>
-		<iron-collapse class="content" opened={{opened}}>
-			<content></content>
-		</iron-collapse>
 
 	</template>
 </dom-module>
