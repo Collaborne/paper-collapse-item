@@ -1,4 +1,4 @@
-paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-item.svg)](http://badge.fury.io/bo/paper-collapse-item)
+paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-item.svg)](http://badge.fury.io/bo/paper-collapse-item) [![Travis state](https://travis-ci.org/Collaborne/paper-collapse-item.svg?branch=master)](https://travis-ci.org/Collaborne/paper-collapse-item)
 =========
 
 `paper-collapse-item` provides a Material Design [item with header and collapsible content](https://www.google.com/design/spec/components/lists.html). The web component is built with [Polymer 1.x](https://www.polymer-project.org).
@@ -32,11 +32,6 @@ Property   | Type    | Description
 **icon**   | String  | Icon that is shown in the header row
 **header** | String  | Text in the header row
 **opened** | Boolean | Status flag if the content section is opened
-
-
-## Continuous integration
-
-[Travis-CI](https://travis-ci.org/Collaborne/paper-collapse-item) [![Travis state](https://travis-ci.org/Collaborne/paper-collapse-item.svg?branch=master)](https://travis-ci.org/Collaborne/paper-collapse-item)
 
 
 ## License
