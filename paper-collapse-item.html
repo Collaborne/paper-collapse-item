@@ -7,6 +7,26 @@
 <link rel="import" href="../paper-item/paper-item-body.html">
 <link rel="import" href="../paper-styles/paper-styles.html">
 
+<!--
+A Material Design [item with header and collapsible content](https://www.google.com/design/spec/components/lists.html)
+
+### Example
+
+```html
+<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
+  Lots of very interesting content.
+</paper-collapse-item>
+<paper-collapse-item icon="icons:info" header="Item 2">
+  Lots of very interesting content.
+</paper-collapse-item>
+<paper-collapse-item icon="icons:help" header="Item 3">
+  Lots of very interesting content.
+</paper-collapse-item>
+```
+
+
+@demo demo/index.html
+-->
 <dom-module id='paper-collapse-item'>
 
 	<template>
@@ -59,9 +79,19 @@
 	Polymer({
 		is: 'paper-collapse-item',
 		properties: {
+			/**
+			 * Text in the header row
+			 */
 			header: String,
+			
+			/**
+			 * Icon that is shown in the header row
+			 */
 			icon: String,
 			
+			/**
+			 * True if the content section is opened
+			 */
 			opened: Boolean,
 			
 			_toggleIcon: {

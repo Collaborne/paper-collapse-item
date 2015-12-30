@@ -1,3 +1,6 @@
+_[Demo and API Docs](http://collaborne.github.io/paper-collapse-item)_
+
+
 paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-item.svg)](http://badge.fury.io/bo/paper-collapse-item) [![Travis state](https://travis-ci.org/Collaborne/paper-collapse-item.svg?branch=master)](https://travis-ci.org/Collaborne/paper-collapse-item)
 =========
 
@@ -5,33 +8,9 @@ paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-it
 
 ![Screenshot](/doc/screenshot.png "Screenshot")
 
-
-## Usage
+To use this element:
 
 `bower install paper-collapse-item`
-
-```html
-<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
-  Lots of very interesting content.
-</paper-collapse-item>
-<paper-collapse-item icon="icons:info" header="Item 2">
-  Lots of very interesting content.
-</paper-collapse-item>
-<paper-collapse-item icon="icons:help" header="Item 3">
-  Lots of very interesting content.
-</paper-collapse-item>
-```
-
-
-## Properties
-
-These properties are available for `paper-collapse-item`:
-
-Property   | Type    | Description
----------- | ------- | ----------------------------
-**icon**   | String  | Icon that is shown in the header row
-**header** | String  | Text in the header row
-**opened** | Boolean | Status flag if the content section is opened
 
 
 ## License
