@@ -59,7 +59,7 @@ A Material Design [item with header and collapsible content](https://www.google.
 		<paper-item on-tap="_toggleOpened">
 			<paper-item-body>
 				<div class="header">
-					<iron-icon class="icon" icon=[[icon]]></iron-icon>
+					<iron-icon class='icon' src="[[src]]" icon=[[icon]]></iron-icon>
 					<div class="flex">[[header]]</div>
 					<paper-icon-button class="toogle" icon=[[_toggleIcon]]></paper-icon-button>
 				</div>
@@ -88,6 +88,11 @@ A Material Design [item with header and collapsible content](https://www.google.
 			 * Icon that is shown in the header row
 			 */
 			icon: String,
+
+			/**
+			 * Image that is shown in the header row
+			 */
+			src: String,
 			
 			/**
 			 * True if the content section is opened
