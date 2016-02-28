@@ -39,17 +39,17 @@ A Material Design [item with header and collapsible content](https://www.google.
 				@apply(--layout-center-center);
 				@apply(--paper-font-subhead);
 			}
-			
+
 			.icon {
 				margin-right: 24px;
 				--iron-icon-height: 32px;
 				--iron-icon-width: 32px;
 			}
-		
+
 			.icon,.toogle {
 				color: var(--disabled-text-color);
 			}
-						
+
 			.content {
 				color: var(--primary-text-color);
 				@apply(--paper-font-body1);
@@ -59,11 +59,11 @@ A Material Design [item with header and collapsible content](https://www.google.
 		<paper-item on-tap="_toggleOpened">
 			<paper-item-body>
 				<div class="header">
-					<iron-icon class='icon' src="[[src]]" icon=[[icon]]></iron-icon>
+					<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
 					<div class="flex">[[header]]</div>
-					<paper-icon-button class="toogle" icon=[[_toggleIcon]]></paper-icon-button>
+					<paper-icon-button class="toogle" icon="[[_toggleIcon]]"></paper-icon-button>
 				</div>
-				<iron-collapse class="content" opened={{opened}}>
+				<iron-collapse class="content" opened="{{opened}}">
 					<content></content>
 				</iron-collapse>
 			</paper-item-body>
@@ -83,22 +83,25 @@ A Material Design [item with header and collapsible content](https://www.google.
 			 * Text in the header row
 			 */
 			header: String,
-			
+
 			/**
-			 * Icon that is shown in the header row
+			 * The name of the icon to use. The name should be of the
+			 * form: iconset_name:icon_name.
 			 */
 			icon: String,
 
 			/**
-			 * Image that is shown in the header row
+			 * If using paper-collapse-item without an iconset, you can set the
+			 * src to be the URL of an individual icon image file. Note that
+			 * this will take precedence over a given icon attribute.
 			 */
 			src: String,
-			
+
 			/**
 			 * True if the content section is opened
 			 */
 			opened: Boolean,
-			
+
 			_toggleIcon: {
 				type: String,
 				computed: '_computeToggleIcon(opened)'
@@ -110,7 +113,7 @@ A Material Design [item with header and collapsible content](https://www.google.
 			this.opened = !this.opened;
 		},
 		_computeToggleIcon: function(opened) {
-			return opened ? "icons:expand-less" : "icons:expand-more";
+			return opened ? 'icons:expand-less' : 'icons:expand-more';
 		}
 	});
 
