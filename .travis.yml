@@ -10,7 +10,7 @@ cache:
 before_script:
 - npm install web-component-tester bower polylint
 - bower install
-- bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git
+- '[ ${TRAVIS_PULL_REQUEST} = "false" ] && [ ${TRAVIS_BRANCH} = "master" ] && bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git'
 - polylint
 - export PATH=$PWD/node_modules/.bin:$PATH
 script:
