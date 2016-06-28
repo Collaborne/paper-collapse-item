@@ -100,7 +100,10 @@ A Material Design [item with header and collapsible content](https://www.google.
 			/**
 			 * True if the content section is opened
 			 */
-			opened: Boolean,
+			opened: {
+				type: Boolean,
+				notify: true
+			},
 
 			_toggleIcon: {
 				type: String,
