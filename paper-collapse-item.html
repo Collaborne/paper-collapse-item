@@ -59,7 +59,9 @@ A Material Design [item with header and collapsible content](https://www.google.
 		<paper-item on-tap="_toggleOpened">
 			<paper-item-body>
 				<div class="header">
-					<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
+					<template is="dom-if" if="[[icon]]">
+						<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
+					</template>
 					<div class="flex">[[header]]</div>
 					<paper-icon-button class="toogle" icon="[[_toggleIcon]]"></paper-icon-button>
 				</div>
