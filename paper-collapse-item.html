@@ -56,9 +56,9 @@ A Material Design [item with header and collapsible content](https://www.google.
 			}
 		</style>
 
-		<paper-item on-tap="_toggleOpened">
+		<paper-item>
 			<paper-item-body>
-				<div class="header">
+				<div class="header" on-tap="_toggleOpened">
 					<template is="dom-if" if="[[icon]]">
 						<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
 					</template>
