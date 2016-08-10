@@ -24,6 +24,16 @@ A Material Design [item with header and collapsible content](https://www.google.
 </paper-collapse-item>
 ```
 
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+--paper-collapse-item-header|Mixin applied to header of collapsible item|{}
+--paper-collapse-item-content|Mixin applied to collapsible content|{}
+--paper-collapse-item-icon|Mixin applied to icon|{}
+
 
 @demo demo/index.html
 -->
@@ -38,12 +48,14 @@ A Material Design [item with header and collapsible content](https://www.google.
 				@apply(--layout-horizontal);
 				@apply(--layout-center-center);
 				@apply(--paper-font-subhead);
+				@apply(--paper-collapse-item-header);
 			}
 
 			.icon {
 				margin-right: 24px;
 				--iron-icon-height: 32px;
 				--iron-icon-width: 32px;
+				@apply(--paper-collapse-item-icon);
 			}
 
 			.icon,.toogle {
@@ -53,6 +65,7 @@ A Material Design [item with header and collapsible content](https://www.google.
 			.content {
 				color: var(--primary-text-color);
 				@apply(--paper-font-body1);
+				@apply(--paper-collapse-item-content);
 			}
 		</style>
 
