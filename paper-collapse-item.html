@@ -128,8 +128,14 @@ Custom property | Description | Default
 		},
 
 		// Private methods
+		/**
+		 * Fired whenever the status is changed (opened/closed)
+		 *
+		 * @event toggle
+		 */
 		_toggleOpened: function(e) {
 			this.opened = !this.opened;
+			this.fire('toggle',this);
 		},
 		_computeToggleIcon: function(opened) {
 			return opened ? 'icons:expand-less' : 'icons:expand-more';
