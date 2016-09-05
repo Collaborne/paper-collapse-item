@@ -9,17 +9,24 @@
 
 	<body>
 		<demo-snippet>
-			<template>
+			<template is="dom-bind">
 				<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
 					Lots of very interesting content.
 				</paper-collapse-item>
 				<paper-collapse-item icon="icons:info" header="Item 2">
 					Lots of very interesting content.
 				</paper-collapse-item>
-				<paper-collapse-item icon="icons:help" header="Item 3">
+				<paper-collapse-item icon="icons:help" header="Item 3 (with event)" on-toggle="onToggle">
 					Lots of very interesting content.
 				</paper-collapse-item>
 			</template>
+
+			<script>
+				var scope = document.querySelector('template[is=dom-bind]');
+				scope.onToggle = function() {
+					alert('Toggled');
+				};
+			</script>
 		</demo-snippet>
 
 		<h4>Styling</h4>
