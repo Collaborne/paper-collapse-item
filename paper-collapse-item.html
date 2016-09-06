@@ -66,6 +66,7 @@ Custom property | Description | Default
 				color: var(--primary-text-color);
 				@apply(--paper-font-body1);
 				@apply(--paper-collapse-item-content);
+				padding: 0 16px;
 			}
 		</style>
 
@@ -78,11 +79,11 @@ Custom property | Description | Default
 					<div class="flex">[[header]]</div>
 					<paper-icon-button class="toogle" icon="[[_toggleIcon]]"></paper-icon-button>
 				</div>
-				<iron-collapse class="content" opened="{{opened}}">
-					<content></content>
-				</iron-collapse>
 			</paper-item-body>
 		</paper-item>
+		<iron-collapse class="content" opened="{{opened}}">
+			<content></content>
+		</iron-collapse>
 
 	</template>
 </dom-module>
