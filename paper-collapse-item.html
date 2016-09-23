@@ -33,7 +33,7 @@ Custom property | Description | Default
 --paper-collapse-item-header|Mixin applied to header of collapsible item|{}
 --paper-collapse-item-content|Mixin applied to collapsible content|{}
 --paper-collapse-item-icon|Mixin applied to icon|{}
-
+--paper-collapse-item-element|Mixin applied to the whole element|{}
 
 @demo demo/index.html
 -->
@@ -67,9 +67,14 @@ Custom property | Description | Default
 				@apply(--paper-font-body1);
 				@apply(--paper-collapse-item-content);
 			}
+
+			.element {
+				@apply(--paper-collapse-item-element);
+			}
+
 		</style>
 
-		<paper-item>
+		<paper-item class="element">
 			<paper-item-body>
 				<div class="header" on-tap="_toggleOpened">
 					<template is="dom-if" if="[[icon]]">
