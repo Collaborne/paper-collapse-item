@@ -3,7 +3,10 @@ sudo: false
 node_js:
 - node
 addons:
-  firefox: '42.0'
+  firefox: '49.0.2'
+  apt:
+    packages:
+    - oracle-java8-installer
 cache:
   directories:
   - node_modules
@@ -14,7 +17,7 @@ before_script:
 - polylint
 - export PATH=$PWD/node_modules/.bin:$PATH
 script:
-- xvfb-run wct
+- JAVA_HOME=/usr/lib/jvm/java-8-oracle PATH=/usr/lib/jvm/java-8-oracle/bin:$PATH xvfb-run wct
 after_success: '[ ${TRAVIS_PULL_REQUEST} = "false" ] && [ ${TRAVIS_BRANCH} = "master" ] && bower install -s https://${GH_TOKEN}@github.com/Collaborne/collaborne-build-tools.git && bower_components/collaborne-build-tools/gpages_build.sh Collaborne info@collaborne.com'
 env:
   secure: l7/neeNOLXly9fDE7Zoxnc8Nr5aGB9r56RrXQ604aJ7dYIgKE9hg7aKOYBpbe47Qm7GJqJtC27qB4oPaO2DxMg5YSnFIM0NQ0h0MpvEi7nvRC/55ZkhVhWi9DNjccghJzs/WP5IqlFLzBUui6pAMKyG6NqCUc/iijap7UZfGxInNjeJD0ZL8/Qjs5f73jCmsF5iPHhT3d6NimjnxFQi9/cqd/FrHPFOOQ0yTOv5tUFbYu4Hhsc5slI7UckH9x6N8jo7BBuJpl2zKien8rLUF0oQE37h0eNgA7oPaTZOWK6ysaY+MCUSMzzA0Sxf7V6N40CStT+whJ/DYVNHMNUMWf7RmaUpYV+3wKS2ERgtMXP3th3C4Nsok0OYBxpJJB2GHvow0QEnngXUVvx4cQlvClDBzDo6Kx6sABM4RNp4WqOVUF7gmLXK7wnlZBQft/Rnd0CC7IAZTdYVvd+IjR/oIsZDilxEIHG18f1EzLN1m+9NHvgRW8F2xuetOQM6tRfZF2q3MTia0ZWHwcbkoIXr7xNWxYQaf5ZXnpnIXgdf72uOcZOUBM4T4xpOSooSdrLv0iGF20CqnoWLwEe2+HU6YScm6WW3K+8va/O8hC7pzj7ZvUGQEwd4Br6IRlvBelVqhNnoPuNsy+k2itSGJxXtVCnINX38b09W+iOUG0ixdvHM=
