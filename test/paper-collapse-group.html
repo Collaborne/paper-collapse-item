@@ -47,14 +47,20 @@
 					});
 				});
 
-				test('toggle works', function(done) {
+				test('toggle works', function() {
 					flush(function() {
 						var items = element._items;
-						items[0].fire('toggle', items[0]);
+
+						expect(items[0].opened).to.be.false;
 						expect(items[1].opened).to.be.false;
 
-						items[1].fire('toggle', items[1]);
+						items[0]._toggleOpened();
+						expect(items[0].opened).to.be.true;
+						expect(items[1].opened).to.be.false;
+
+						items[1]._toggleOpened();
 						expect(items[0].opened).to.be.false;
+						expect(items[1].opened).to.be.true;
 						done();
 					});
 				});
