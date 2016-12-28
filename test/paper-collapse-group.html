@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+	<head>
+		<title>paper-collapse-group</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+		<link rel="import" href="../paper-collapse-item.html">
+    <link rel="import" href="../paper-collapse-group.html">
+	</head>
+	<body>
+
+		<test-fixture id="Group">
+			<template>
+				<paper-collapse-group>
+          <paper-collapse-item></paper-collapse-item>
+          <paper-collapse-item></paper-collapse-item>
+        </paper-collapse-group>
+			</template>
+		</test-fixture>
+
+		<script>
+			suite('<paper-collapse-group>', function() {
+
+        setup(function() {
+          element = fixture('Group');
+        });
+
+        test('can observer items inside content tag',function(done){
+          flush(function(){
+            expect(element._items).to.have.length(2);
+            done();
+          });
+        });
+
+        test('can observe new add elements',function(done){
+          flush(function() {
+            var item = document.createElement('paper-collapse-item');
+            Polymer.dom(element).appendChild(item);
+            // give the element some time to update
+            element.async(function() {
+              expect(element._items).to.have.length(3);
+              done();
+            }, 200);
+          });
+       });
+
+       test('toggle works',function(done){
+
+         flush(function(){
+
+           var items = element._items;
+           items[0].fire('toggle',items[0]);
+           expect(items[1].opened).to.equal(false);
+
+           items[1].fire('toggle',items[1]);
+           expect(items[0].opened).to.equal(false);
+           done();
+         });
+       });
+
+			});
+		</script>
+
+	</body>
+</html>

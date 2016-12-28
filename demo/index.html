@@ -5,6 +5,7 @@
 		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
 		<link rel="import" href="../../iron-icons/iron-icons.html">
 		<link rel="import" href="../paper-collapse-item.html">
+		<link rel="import" href="../paper-collapse-group.html">
 	</head>
 
 	<body>
@@ -30,6 +31,23 @@
 					alert('Toggled');
 				};
 			</script>
+		</demo-snippet>
+
+		<h4>Groups</h4>
+		<demo-snippet>
+			<template>
+				<paper-collapse-group>
+					<paper-collapse-item icon="icons:favorite" header="Item 1">
+						Only on item will be opened inside groups
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:info" header="Item 2" opened>
+						Only on item will be opened inside groups
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
+						Only on item will be opened inside groups
+					</paper-collapse-item>
+				</paper-collapse-group>
+			</template>
 		</demo-snippet>
 
 		<h4>Styling</h4>
