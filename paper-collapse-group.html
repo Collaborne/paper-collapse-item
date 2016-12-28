@@ -64,7 +64,7 @@ item can be opened.
 		 *
 		 * Setup an observer for newly added items
 		 */
-		_observeItems: function(){
+		_observeItems: function() {
 			Polymer.dom(this.$.content).observeNodes(function(info) {
 				var addedItems = info.addedNodes.filter(function(node) {
 					return node.nodeName.toLowerCase() === 'paper-collapse-item';
