@@ -62,7 +62,7 @@ item can be opened.
 		/**
 		 * Observe Items
 		 *
-		 * Setup an observer for new add items
+		 * Setup an observer for newly added items
 		 */
 		_observeItems: function(){
 			Polymer.dom(this.$.content).observeNodes(function(info) {
@@ -70,9 +70,11 @@ item can be opened.
 					return node.nodeName.toLowerCase() === 'paper-collapse-item';
 				});
 
-				this._items = this._items.concat(addedItems);
+				if (addedItems.length > 0) {
+					this._items = this._items.concat(addedItems);
 
-				this.fire('update');
+					this.fire('update');
+				}
 			}.bind(this));
 		},
 
@@ -85,6 +87,8 @@ item can be opened.
 		 */
 		_onToggle: function(e){
 			this._items.forEach(function(item) {
+				// Force all other items (aside the one triggering the event) to
+				// get closed
 				if (item !== e.target) {
 					item.opened = false;
 				}
