@@ -28,14 +28,14 @@
 					element = fixture('Group');
 				});
 
-				test('can observer items inside content tag', function(done) {
+				test('can observe items inside content tag', function(done) {
 					flush(function(){
 						expect(element._items).to.have.length(2);
 						done();
 					});
 				});
 
-				test('can observe new add elements', function(done) {
+				test('can observe newly added elements', function(done) {
 					flush(function() {
 						var item = document.createElement('paper-collapse-item');
 						Polymer.dom(element).appendChild(item);
@@ -50,11 +50,11 @@
 				test('toggle works', function(done) {
 					flush(function() {
 						var items = element._items;
-						items[0].fire('toggle',items[0]);
-						expect(items[1].opened).to.equal(false);
+						items[0].fire('toggle', items[0]);
+						expect(items[1].opened).to.be.false;
 
-						items[1].fire('toggle',items[1]);
-						expect(items[0].opened).to.equal(false);
+						items[1].fire('toggle', items[1]);
+						expect(items[0].opened).to.be.false;
 						done();
 					});
 				});

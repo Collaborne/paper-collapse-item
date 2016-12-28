@@ -67,10 +67,10 @@ item can be opened.
 		_observeItems: function(){
 			Polymer.dom(this.$.content).observeNodes(function(info) {
 				var addedItems = info.addedNodes.filter(function(node) {
-					return (node.nodeName.toLowerCase() === 'paper-collapse-item')
+					return node.nodeName.toLowerCase() === 'paper-collapse-item';
 				});
 
-				this._items =  this._items.concat(addedItems);
+				this._items = this._items.concat(addedItems);
 
 				this.fire('update');
 			}.bind(this));
@@ -79,16 +79,16 @@ item can be opened.
 		/**
 		 * On Toggle
 		 *
-		 * Listen to fired toggle events from items and update  the groups
+		 * Listen to fired toggle events from items and update the groups
 		 *
 		 * @param  {Event} e
 		 */
 		_onToggle: function(e){
-			for (var x=0; x < this._items.length; x++) {
-				if (this._items[x] !== e.target) {
-					this._items[x].opened = false;
+			this._items.forEach(function(item) {
+				if (item !== e.target) {
+					item.opened = false;
 				}
-			}
+			});
 		}
 
 	});
