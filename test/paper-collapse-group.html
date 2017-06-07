@@ -28,25 +28,6 @@
 					element = fixture('Group');
 				});
 
-				test('can observe items inside content tag', function(done) {
-					flush(function(){
-						expect(element._items).to.have.length(2);
-						done();
-					});
-				});
-
-				test('can observe newly added elements', function(done) {
-					flush(function() {
-						var item = document.createElement('paper-collapse-item');
-						Polymer.dom(element).appendChild(item);
-						// give the element some time to update
-						element.async(function() {
-							expect(element._items).to.have.length(3);
-							done();
-						}, 200);
-					});
-				});
-
 				test('toggle works', function() {
 					flush(function() {
 						var items = element._items;
