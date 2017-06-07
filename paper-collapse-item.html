@@ -45,27 +45,31 @@ Custom property | Description | Default
 			.header {
 				min-height: 48px;
 				color: var(--primary-text-color);
-				@apply(--layout-horizontal);
-				@apply(--layout-center-center);
-				@apply(--paper-font-subhead);
-				@apply(--paper-collapse-item-header);
+				@apply --layout-center-center;
+				@apply --layout-horizontal;
+				@apply --paper-font-subhead;
+				@apply --paper-collapse-item-header;
 			}
 
 			.icon {
 				margin-right: 24px;
 				--iron-icon-height: 32px;
 				--iron-icon-width: 32px;
-				@apply(--paper-collapse-item-icon);
+				@apply --paper-collapse-item-icon;
 			}
 
-			.icon,.toogle {
+			.icon, .toogle {
 				color: var(--disabled-text-color);
+			}
+
+			.html {
+				@apply --layout-flex;
 			}
 
 			.content {
 				color: var(--primary-text-color);
-				@apply(--paper-font-body1);
-				@apply(--paper-collapse-item-content);
+				@apply --paper-font-body1;
+				@apply --paper-collapse-item-content;
 			}
 		</style>
 
@@ -77,7 +81,7 @@ Custom property | Description | Default
 					</template>
 					<!-- Polymer's capitalization from hyphens converts `inner-h-t-m-l` to
 						`innerHTML`, and then sets `header` as it's property value -->
-					<div class="flex" inner-h-t-m-l="[[header]]"></div>
+					<div class="html" inner-h-t-m-l="[[header]]"></div>
 					<paper-icon-button class="toogle" icon="[[_toggleIcon]]"></paper-icon-button>
 				</div>
 				<iron-collapse class="content" opened="{{opened}}">

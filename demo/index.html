@@ -10,27 +10,29 @@
 
 	<body>
 		<demo-snippet>
-			<template is="dom-bind">
-				<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
-					Lots of very interesting content.
-				</paper-collapse-item>
-				<paper-collapse-item icon="icons:info" header="Item 2">
-					Lots of very interesting content.
-				</paper-collapse-item>
-				<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
-					Lots of very interesting content.
-				</paper-collapse-item>
-				<paper-collapse-item icon="icons:help" header="Item 3 (with event)" on-toggle="onToggle">
-					Lots of very interesting content.
-				</paper-collapse-item>
-			</template>
+			<dom-bind>
+				<template>
+					<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
+						Lots of very interesting content.
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:info" header="Item 2">
+						Lots of very interesting content.
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
+						Lots of very interesting content.
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:help" header="Item 3 (with event)" on-toggle="onToggle">
+						Lots of very interesting content.
+					</paper-collapse-item>
 
-			<script>
-				var scope = document.querySelector('template[is=dom-bind]');
-				scope.onToggle = function() {
-					alert('Toggled');
-				};
-			</script>
+					<script>
+						var scope = document.querySelector('dom-bind');
+						scope.onToggle = function() {
+							alert('Toggled');
+						};
+					</script>
+				</template>
+			</dom-bind>
 		</demo-snippet>
 
 		<h4>Groups</h4>
