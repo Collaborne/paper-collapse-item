@@ -1,16 +1,29 @@
-_[Demo and API Docs](http://collaborne.github.io/paper-collapse-item)_
-
-
-paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-item.svg)](http://badge.fury.io/bo/paper-collapse-item) [![Travis state](https://travis-ci.org/Collaborne/paper-collapse-item.svg?branch=master)](https://travis-ci.org/Collaborne/paper-collapse-item)
+paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-item.svg)](http://badge.fury.io/bo/paper-collapse-item) [![Travis state](https://travis-ci.org/Collaborne/paper-collapse-item.svg?branch=master)](https://travis-ci.org/Collaborne/paper-collapse-item) [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Collaborne/paper-collapse-item)
 =========
 
 `paper-collapse-item` provides a Material Design [item with header and collapsible content](https://www.google.com/design/spec/components/lists.html). The web component is built with [Polymer](https://www.polymer-project.org).
 
-![Screenshot](/doc/screenshot.png "Screenshot")
-
 To use this element:
 
 `bower install paper-collapse-item`
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../iron-icons/iron-icons.html">
+    <link rel="import" href="paper-collapse-item.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
+    Lots of very interesting content.
+</paper-collapse-item>
+```
 
 
 ## License
