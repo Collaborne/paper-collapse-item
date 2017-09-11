@@ -4,6 +4,7 @@
 		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
 		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
 		<link rel="import" href="../../iron-icons/iron-icons.html">
+		<link rel="import" href="../../paper-styles/demo-pages.html">
 		<link rel="import" href="../paper-collapse-item.html">
 		<link rel="import" href="../paper-collapse-group.html">
 	</head>
@@ -55,17 +56,19 @@
 		<h4>Styling</h4>
 		<demo-snippet>
 			<template>
-				<style is="custom-style">
-					.styled {
-						--paper-collapse-item-header: {
-							color: red;
-							font-size: 12px;
+				<custom-style>
+					<style is="custom-style">
+						.styled {
+							--paper-collapse-item-header: {
+								color: red;
+								font-size: large;
+							}
+							--paper-collapse-item-content: {
+								color: green;
+							}
 						}
-						--paper-collapse-item-content: {
-							color: green;
-						}
-					}
-				</style>
+					</style>
+				</custom-style>
 				<paper-collapse-item class="styled" icon="icons:favorite" header="Item 1">
 					Lots of very interesting content.
 				</paper-collapse-item>
