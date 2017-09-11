@@ -76,7 +76,7 @@ Custom property | Description | Default
 		<paper-item>
 			<paper-item-body>
 				<div class="header" on-tap="_toggleOpened">
-					<template is="dom-if" if="[[icon]]">
+					<template is="dom-if" if="[[_or(icon, src)]]">
 						<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
 					</template>
 					<!-- Polymer's capitalization from hyphens converts `inner-h-t-m-l` to
@@ -145,6 +145,9 @@ Custom property | Description | Default
 		},
 		_computeToggleIcon: function(opened) {
 			return opened ? 'icons:expand-less' : 'icons:expand-more';
+		},
+		_or: function(value1, value2) {
+			return value1 || value2;
 		}
 	});
 
