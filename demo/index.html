@@ -1,3 +1,7 @@
+<!--
+Sample image created by Tim Green (Creative Common):
+https://www.flickr.com/photos/atoach/3750215018/
+-->
 <html>
 	<head>
 		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
@@ -10,50 +14,53 @@
 	</head>
 
 	<body>
-		<demo-snippet>
-			<dom-bind>
-				<template>
-					<paper-collapse-item icon="icons:favorite" header="Item 1" opened>
-						Lots of very interesting content.
-					</paper-collapse-item>
-					<paper-collapse-item icon="icons:info" header="Item 2">
-						Lots of very interesting content.
-					</paper-collapse-item>
-					<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
-						Lots of very interesting content.
-					</paper-collapse-item>
-					<paper-collapse-item icon="icons:help" header="Item 3 (with event)" on-toggle="onToggle">
-						Lots of very interesting content.
-					</paper-collapse-item>
-
-					<script>
-						var scope = document.querySelector('dom-bind');
-						scope.onToggle = function() {
-							alert('Toggled');
-						};
-					</script>
-				</template>
-			</dom-bind>
-		</demo-snippet>
-
-		<h4>Groups</h4>
+		<h2>&lt;paper-collapse-item&gt;</h2>
+			
+		<h4>Items can have an icon or an image</h4>
 		<demo-snippet>
 			<template>
-				<paper-collapse-group>
-					<paper-collapse-item icon="icons:favorite" header="Item 1">
-						Only on item will be opened inside groups
-					</paper-collapse-item>
-					<paper-collapse-item icon="icons:info" header="Item 2" opened>
-						Only on item will be opened inside groups
-					</paper-collapse-item>
-					<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
-						Only on item will be opened inside groups
-					</paper-collapse-item>
-				</paper-collapse-group>
+				<paper-collapse-item icon="icons:favorite" header="Item with an icon" opened>
+					Lots of very interesting content.
+				</paper-collapse-item>
+				<paper-collapse-item src="face.jpg" header="Item with an image">
+					Lots of very interesting content.
+				</paper-collapse-item>
+				<paper-collapse-item header="Item without an icon/image">
+					Lots of very interesting content.
+				</paper-collapse-item>
 			</template>
 		</demo-snippet>
 
-		<h4>Styling</h4>
+		<h4>Items can have HTML in their header</h4>
+		<demo-snippet>
+			<template>
+				<paper-collapse-item icon="icons:help" header="<b>Header <u>with</u> HTML</b>">
+					Lots of very interesting content.
+				</paper-collapse-item>
+			</template>
+		</demo-snippet>
+
+		<h4>Items fire events when they are toggled</h4>
+		<demo-snippet>
+			<template>
+				<dom-bind id="events">
+					<template>
+						<paper-collapse-item icon="icons:help" header="Item with toggle event" on-toggle="onToggle">
+							Lots of very interesting content.
+						</paper-collapse-item>
+
+						<script>
+							var scope = document.querySelector('#events');
+							scope.onToggle = function() {
+								alert('Toggled');
+							};
+						</script>
+					</template>
+				</dom-bind>
+			</template>
+		</demo-snippet>
+
+		<h4>Item header and content can be styled</h4>
 		<demo-snippet>
 			<template>
 				<custom-style>
@@ -69,9 +76,28 @@
 						}
 					</style>
 				</custom-style>
-				<paper-collapse-item class="styled" icon="icons:favorite" header="Item 1">
+				<paper-collapse-item class="styled" icon="icons:favorite" header="Item" opened>
 					Lots of very interesting content.
 				</paper-collapse-item>
+			</template>
+		</demo-snippet>
+
+		<h2>&lt;paper-collapse-group&gt;</h2>
+		
+		<h4>Item groups allow only one item to be opened</h4>
+		<demo-snippet>
+			<template>
+				<paper-collapse-group>
+					<paper-collapse-item icon="icons:info" header="Item 1">
+						Only one item will be opened inside a group
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:info" header="Item 2" opened>
+						Only one item will be opened inside a group
+					</paper-collapse-item>
+					<paper-collapse-item icon="icons:info" header="Item 3">
+						Only one item will be opened inside a group
+					</paper-collapse-item>
+				</paper-collapse-group>
 			</template>
 		</demo-snippet>
 	</body>
