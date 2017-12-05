@@ -89,7 +89,7 @@ item can be opened.
 			this._items.forEach(function(item) {
 				// Force all other items (aside the one triggering the event) to
 				// get closed
-				if (item !== e.target) {
+				if (item !== e.target && e.target.opened === true) {
 					item.opened = false;
 				}
 			});
