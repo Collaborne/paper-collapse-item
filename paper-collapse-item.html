@@ -135,8 +135,11 @@ Custom property | Description | Default
 			}
 		},
 
-		_openedChanged: function() {
-			this.fire('toggle', this);
+		_openedChanged: function(value, old) {
+			// Ignore initialization calls
+			if (old !== undefined) {
+				this.fire('toggle', this);
+			}
 		},
 		// Private methods
 		/**
