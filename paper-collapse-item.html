@@ -126,7 +126,7 @@ Custom property | Description | Default
 				type: Boolean,
 				reflectToAttribute: true,
 				notify: true,
-				observer: '_opendChanged'
+				observer: '_openedChanged'
 			},
 
 			_toggleIcon: {
@@ -136,7 +136,7 @@ Custom property | Description | Default
 		},
 
 		
-		_opendChanged: function(){
+		_openedChanged: function(){
 			this.fire('toggle', this);
 		},
 		// Private methods
