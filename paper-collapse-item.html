@@ -46,7 +46,6 @@ Custom property | Description | Default
 			.header {
 				min-height: 48px;
 				color: var(--primary-text-color);
-				@apply --layout-center-center;
 				@apply --layout-horizontal;
 				@apply --paper-font-subhead;
 				@apply --paper-collapse-item-header;
@@ -72,6 +71,11 @@ Custom property | Description | Default
 				@apply --paper-font-body1;
 				@apply --paper-collapse-item-content;
 			}
+			
+			.toggle {
+				position: absolute;
+				right: 0px;
+			}
 		</style>
 
 		<simple-paper-item>
@@ -80,10 +84,11 @@ Custom property | Description | Default
 					<template is="dom-if" if="[[_or(icon, src)]]">
 						<iron-icon class="icon" src="[[src]]" icon="[[icon]]"></iron-icon>
 					</template>
-					<!-- Polymer's capitalization from hyphens converts `inner-h-t-m-l` to
-						`innerHTML`, and then sets `header` as it's property value -->
-					<div class="html" inner-h-t-m-l="[[header]]"></div>
-					<paper-icon-button class="toogle" icon="[[_toggleIcon]]"></paper-icon-button>
+					<template is="dom-if" if="[[header]]">
+						<div class="html" inner-h-t-m-l="[[header]]"></div>
+					</template>
+					<slot class="html" name="header"></slot>
+					<paper-icon-button class="toggle" icon="[[_toggleIcon]]"></paper-icon-button>
 				</div>
 				<iron-collapse class="content" opened="{{opened}}">
 					<slot></slot>
