@@ -34,6 +34,7 @@ Custom property | Description | Default
 --paper-collapse-item-header|Mixin applied to header of collapsible item|{}
 --paper-collapse-item-content|Mixin applied to collapsible content|{}
 --paper-collapse-item-icon|Mixin applied to icon|{}
+--paper-collapse-simple-paper-item-styles|Mixin applied to simple-paper-item|{}
 
 
 @demo demo/index.html
@@ -75,6 +76,10 @@ Custom property | Description | Default
 			.toggle {
 				position: absolute;
 				right: 0px;
+			}
+
+			simple-paper-item {
+				@apply --paper-collapse-simple-paper-item-styles;
 			}
 		</style>
 
