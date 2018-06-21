@@ -69,10 +69,6 @@ class PaperCollapseItem extends PolymerElement {
                 @apply --paper-collapse-item-content;
             }
             
-            .toggle {
-                position: absolute;
-                right: 0px;
-            }
             simple-paper-item {
                 @apply --paper-collapse-simple-paper-item-styles;
             }
