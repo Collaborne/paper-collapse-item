@@ -40,9 +40,7 @@ import '@polymer/paper-styles/paper-styles.js';
  * @demo demo/index.html
  */
 class PaperCollapseItem extends PolymerElement {
-
   static get template() {
-
     return html`
         <style>
             .header {
@@ -101,7 +99,6 @@ class PaperCollapseItem extends PolymerElement {
   }
 
   static get properties() {
-
     return {
       /**
        * Text in the header row
@@ -143,7 +140,6 @@ class PaperCollapseItem extends PolymerElement {
    * @event toggle
    */
   _toggleOpened(e) {
-
     this.opened = !this.opened;
 
     const toggleEvent = new CustomEvent('toggle', {
@@ -156,12 +152,10 @@ class PaperCollapseItem extends PolymerElement {
   }
 
   _computeToggleIcon(opened) {
-
     return opened ? 'icons:expand-less' : 'icons:expand-more';
   }
 
   _or(value1, value2) {
-
     return value1 || value2;
   }
 }

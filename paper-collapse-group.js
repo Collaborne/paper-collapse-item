@@ -30,12 +30,10 @@ import {FlattenedNodesObserver} from '@polymer/polymer/lib/utils/flattened-nodes
 class PaperCollapseGroup extends PolymerElement {
 
   static get template() {
-    
     return html`<slot id="content"></slot>`;
   }
 
   static get properties() {
-
     return {
       /**
        * Array of observed paper-collapse-items
@@ -55,13 +53,11 @@ class PaperCollapseGroup extends PolymerElement {
    * initialized.
    */
   ready() {
-
     super.ready();
     this.addEventListener('toggle', e => this._onToggle(e));
   }
 
   connectedCallback() {
-
     super.connectedCallback();
     this._observer = new FlattenedNodesObserver(this.$.content, info => {
 
@@ -84,7 +80,6 @@ class PaperCollapseGroup extends PolymerElement {
   }
 
   disconnectedCallback() {
-
     super.disconnectedCallback();
     this._observer.disconnect();
   }
@@ -97,7 +92,6 @@ class PaperCollapseGroup extends PolymerElement {
    * @param  {Event} e
    */
   _onToggle(e) {
-
     this._items.forEach(item => {
       // Force all other items (aside the one triggering the event) to
       // get closed
