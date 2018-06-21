@@ -5,7 +5,7 @@ paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-it
 
 To use this element:
 
-`bower install paper-collapse-item`
+`npm install Collaborne/paper-collapse-item`
 
 <!--
 ```
@@ -35,6 +35,10 @@ Or You can use slot:
 </paper-collapse-item>
 ```
 
+Start demo:
+```
+polymer serve --module-resolution="node"
+```
 
 ## License
 
