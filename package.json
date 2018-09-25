@@ -19,21 +19,28 @@
   "homepage": "https://github.com/Collaborne/paper-collapse-item",
   "repository": "https://github.com/Collaborne/paper-collapse-item",
   "dependencies": {
-    "@polymer/iron-collapse": "^3.0.0-pre.1",
-    "@polymer/iron-icons": "^3.0.0-pre.1",
-    "@polymer/paper-icon-button": "^3.0.0-pre.1",
-    "@polymer/paper-item": "^3.0.0-pre.1",
-    "@polymer/paper-styles": "^3.0.0-pre.1",
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/iron-collapse": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.1",
+    "@polymer/paper-item": "^3.0.1",
+    "@polymer/paper-styles": "^3.0.1",
+    "@polymer/polymer": "^3.0.5"
   },
   "devDependencies": {
-    "@polymer/iron-demo-helpers": "^3.0.0-pre.12",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
-    "wct-browser-legacy": "^1.0.0"
+    "@polymer/iron-demo-helpers": "^3.0.2",
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.1.3",
+    "polymer-cli": "^1.8.0",
+    "wct-browser-legacy": "^1.0.0",
+    "web-component-tester": "^6.8.0"
   },
   "resolutions": {
     "type-detect": "0.1.1",
     "supports-color": "3.1.2",
     "samsam": "1.1.3"
+  },
+  "scripts": {
+    "lint": "polymer lint",
+    "test": "polymer test"
   }
 }

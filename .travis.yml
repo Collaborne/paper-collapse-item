@@ -10,15 +10,13 @@ addons:
 cache:
   directories:
   - node_modules
-  - "$HOME/.cache/bower"
 before_install:
 - "if [ -d node_modules ] && [ x$(cat node_modules/.last-node-version 2>/dev/null) != x$(node -e 'console.log(process.version)') ]; then npm rebuild && node -e 'console.log(process.version)' > node_modules/.last-node-version; fi"
-before_script:
-- npm install web-component-tester bower@1.7.9 polymer-cli
-- $(npm bin)/bower install
-- $(npm bin)/polymer lint || true
+install:
+- npm install
+- npm run lint
 script:
-- xvfb-run $(npm bin)/wct
+- xvfb-run npm test
 deploy:
   provider: npm
   email: npm@collaborne.com
