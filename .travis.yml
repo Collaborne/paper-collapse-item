@@ -19,3 +19,12 @@ before_script:
 - $(npm bin)/polymer lint || true
 script:
 - xvfb-run $(npm bin)/wct
+deploy:
+  provider: npm
+  email: npm@collaborne.com
+  api_key:
+    secure: "lV6QVcL5jfHsr7rahN1AU4WgRf/OCb64mvU6mavoTPVr4BdMeTzO9VzhVUlHyldYobmgqV63f2gaPWnwewnM/A55GlHMwCLCiyx2E/41d1naSMMWfvrgnxRGpa+ehjPWvf7fDmRDyoFUEVQlWm63ujIKHuwvFPDGTkwGp3F3rFwmKChXGD2idJrKiLQ8YWc8s5CWsInZph4SxOlTo6l93GQE91j4rxlj3QvJzSjKc2BBCojiXMH1ftHRAgPyJm6WyzGSaN5tuk1XFh/gpoBD5qv/OxybFSzucmkyAvRwFq3piiinbdH6u5IiyDTjnxJmEYYJsRDq6sKM23rCPWsdNiVK86Ie3pfguK3oqxEDIfEJ49y/smRMWWQ8CmI1oFIaMtSDVTfIlDeH1pniW2fCzWwyww1v6J2Oa2M1pvmDpee+M5Kv+tIEvuWUOHE5rWrZViSgNl8VcA52wC9nGdifGfNdRWPHveTzwEHvOnZG0KVOaFGlbDf1U+qTXvNCHGhpw17dnJZxMiPyITWXvhFiCiGBD9Ag2UhuS16XwnNu70uGDl4XM+TnAAaRGhOs8ZSb3ciqSC1wZOmuh8UeSql9ETbffO7x0p82iC+Mh73vke979AvwFWFh7cijczf92P0ObYDY0ZvxCuEVPZOKYJLDMIJgCXZ2cgobnmzQLB2SQ3g="
+  on:
+    tags: true
+    condition: $(node -e 'console.log("v" + require("./package.json").version)') = ${TRAVIS_TAG}
+  skip_cleanup: true
