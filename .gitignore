@@ -4,3 +4,7 @@ bower_components/
 npm-shrinkwrap.json
 package-lock.json
 yarn.lock
+
+*.orig
+*.rej
+*.porig
