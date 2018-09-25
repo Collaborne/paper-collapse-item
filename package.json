@@ -1,5 +1,5 @@
 {
-  "name": "@collaborne/paper-collapse-item",
+  "name": "paper-collapse-item",
   "flat": true,
   "version": "4.0.1",
   "description": "A Material Design item with header and collapsible content (Polymer)",
