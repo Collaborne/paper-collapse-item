@@ -16,7 +16,8 @@
   ],
   "main": "paper-collapse-item.js",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/collaborne/paper-collapse-item",
+  "homepage": "https://github.com/Collaborne/paper-collapse-item",
+  "repository": "https://github.com/Collaborne/paper-collapse-item",
   "dependencies": {
     "@polymer/iron-collapse": "^3.0.0-pre.1",
     "@polymer/iron-icons": "^3.0.0-pre.1",
