@@ -6,7 +6,7 @@ paper-collapse-item [![Bower version](https://badge.fury.io/bo/paper-collapse-it
 
 To use this element:
 
-`npm install Collaborne/paper-collapse-item`
+`npm install paper-collapse-item`
 
 <!--
 ```
