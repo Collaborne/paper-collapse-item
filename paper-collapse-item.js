@@ -6,6 +6,7 @@ import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-item/paper-item.js';
 import '@polymer/paper-item/paper-item-body.js';
 import '@polymer/paper-styles/paper-styles.js';
+import './simple-paper-item.js';
 
 /**
  * `PaperCollapseItem`
